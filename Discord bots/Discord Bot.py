@@ -72,7 +72,7 @@ async def load():
 async def main():
     async with client:
         await load()
-        await client.start("MTA4OTczMDc4MDMyMzkyNjEyNw.G2WfM0.i3KptY7EfdD-tBJq8zqiDqlHTFNm8OOzLddIq0")
+        await client.start("bot token")
 @client.event
 async def on_guild_join(guild):
     with open("cogs/jsonfiles/autorole.json","r") as f:
@@ -89,13 +89,6 @@ async def on_guild_remove(guild):
     with open("cogs/jsonfiles/autorole.json","w") as f:
         json.dump(auto_role,f,indent=4)
 asyncio.run(main())
-asyncio.run(main())
 
 
-@client.command(aliases=["8ball","eightball","eight ball", "8 ball"])
-async def magic_eightball(ctx,*,question):
-    with open("responses.txt","r") as f:
-        random_responses=f.readlines()
-        response=random.choice(random_responses)
-    await ctx.send(response)
 
