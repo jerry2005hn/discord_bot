@@ -72,7 +72,7 @@ async def load():
 async def main():
     async with client:
         await load()
-        await client.start("bot token")
+        await client.start("bot token") #use actual bot token when execute
 @client.event
 async def on_guild_join(guild):
     with open("cogs/jsonfiles/autorole.json","r") as f:
